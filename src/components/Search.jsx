@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import search from "../assets/search.png";
-import SongCard from "./songCard";
+import SongCard from "./SongCard";
 import { useOutletContext } from "react-router-dom";
 import FooterPlay from "./FooterPlay";
 const Search = () => {

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useOutletContext } from 'react-router-dom';
-import SongCard from './songCard';
+import SongCard from './SongCard';
 import FooterPlay from './FooterPlay';
 
 const Liked = () => {

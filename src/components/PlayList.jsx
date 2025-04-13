@@ -1,5 +1,5 @@
 import React from 'react'
-import SongCard from './songCard';
+import SongCard from './SongCard';
 import { useOutletContext } from 'react-router-dom';
 import FooterPlay from './FooterPlay';
 const PlayList = () => {

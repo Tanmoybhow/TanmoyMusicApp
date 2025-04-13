@@ -4,7 +4,7 @@ import next from "../assets/next.png";
 import play from "../assets/play.png";
 import pause from "../assets/pause.png";
 import downArrow from "../assets/down-arrow.png";
-import SongCard from "./songCard";
+import SongCard from "./SongCard";
 import { useOutletContext } from "react-router-dom";
 import FooterPlay from "./FooterPlay";
 const Home = () => {
