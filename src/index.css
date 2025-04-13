@@ -1,0 +1,56 @@
+body{
+    background-color: black;
+}
+.showAllSong{
+  overflow:visible;
+}
+.showAllSong .leftHeading h2{
+  display: none;
+}
+.showAllSong .rightHome{
+    top:54px;
+    padding-bottom: 140px;
+}
+.showAllSong #arrow{
+   transform: rotate(-90deg);
+}
+.showAllSong .footerPlay{
+  display: block;
+}
+.wave-bar {
+    width: 4px;
+    height: 100%;
+    background-color: #3b82f6; /* Tailwind's blue-500 */
+    border-radius: 2px;
+    transform-origin: bottom;
+  }
+  
+  @keyframes wave {
+    0% {
+      transform: scaleY(1);
+    }
+    50% {
+      transform: scaleY(1.8);
+    }
+    100% {
+      transform: scaleY(1);
+    }
+  }
+  
+  .animate-wave {
+    animation: wave 0.8s infinite ease-in-out;
+  }
+  
+  .delay-75 {
+    animation-delay: 0.1s;
+  }
+  .delay-150 {
+    animation-delay: 0.2s;
+  }
+  .delay-225 {
+    animation-delay: 0.3s;
+  }
+  .delay-300 {
+    animation-delay: 0.4s;
+  }
+  
