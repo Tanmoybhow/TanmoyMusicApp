@@ -1,5 +1,4 @@
 import React from "react";
-import kesariyaImg from "../assets/musicImg/Kesariya.jpg";
 import play from "../assets/play-white.png";
 import pause from "../assets/pause-white.png";
 import { useOutletContext } from "react-router-dom";
