@@ -5,13 +5,31 @@ import heart from '../assets/heart.png'
 import heartBorder from '../assets/heart-border.png'
 import { useOutletContext } from 'react-router-dom'
 
-const SongCard = ({id,img,singer,title,song,addPlayList,addPlayListMethod,addWishlist,addWishListMethod}) => {
-  let [songArray,setSongArray,index,setIndex,currentSong,setCurrentSong,audioRef] = useOutletContext()
+const SongCard = ({id,img,singer,title,song,addPlayList,addWishlist}) => {
+    let [
+      songArray,
+      setSongArray,
+      index,
+      setIndex,
+      currentSong,
+      setCurrentSong,
+      audioRef,
+      addPlayListMethod,
+      addWishListMethod,
+      isPlaying,
+      setIsPlaying,
+      progressing,
+      setProgressing,
+      handlePlay
+    ] = useOutletContext();
   const setSong = (e) =>{
      const index = e.currentTarget.id;
      setIndex(index);
       setCurrentSong(songArray[index]);
-      audioRef.current.play();
+
+      setTimeout(() => {
+        handlePlay();
+      }, 200);
   }
   return (
     <div id={id} className='w-full h-[90px] md:h-[120px] bg-gray-800 cursor-pointer hover:bg-gray-700 transition-all flex items-center p-3 rounded-lg gap-5' onClick={setSong}>

@@ -25,6 +25,7 @@ const Home = () => {
     setIsPlaying,
     progressing,
     setProgressing,
+    handlePlay
   ] = useOutletContext();
   const progressRef = useRef(null);
   const [allSongShow, setAllSongShow] = useState(false);
@@ -32,12 +33,14 @@ const Home = () => {
   const rightHome = useRef();
   const arrow = useRef();
   const home = useRef();
-  console.log(arrow);
   
 
   const nextSong = () => {
     if (isPlaying) {
-      audioRef.current.play();
+      // audioRef.current.play();
+      setTimeout(() => {
+        handlePlay();
+      }, 200);
     }
     setProgressing(0);
     index++;
@@ -64,10 +67,11 @@ const Home = () => {
     } else {
       // Single click — restart current song
       audioRef.current.currentTime = 0;
-      if (!isPlaying) {
-        audioRef.current.play();
+        setTimeout(() => {
+          handlePlay();
+        }, 200);
         setIsPlaying(true);
-      }
+      
     }
 
     lastClickTimeRef.current = now; // update the last click time
@@ -145,10 +149,8 @@ const Home = () => {
             onClick={() => {
               if (isPlaying) {
                 audioRef.current.pause();
-                console.log("pause");
               } else {
                 audioRef.current.play();
-                console.log("play");
               }
               setIsPlaying(!isPlaying);
             }}

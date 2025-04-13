@@ -14,8 +14,8 @@ function App() {
       audioRef.current.pause();
       setIsPlaying(false)
       audioRef.current = new Audio(currentSong.song);
-      setIsPlaying(true);
-        audioRef.current.play();
+      // setIsPlaying(true);
+        // audioRef.current.play();
       const audio = audioRef.current;
       const updateProgress = () => {
         const duration = audio.duration;
@@ -26,6 +26,7 @@ function App() {
         }
       };
       audio.addEventListener("timeupdate", updateProgress);
+
   
       const handleEnded = () => {
         if (isPlaying) {
@@ -48,6 +49,12 @@ function App() {
         audio.addEventListener("ended", handleEnded);
       };
     }, [currentSong, audioRef]);
+
+    const handlePlay = () => {
+      audioRef.current.play()
+        .then(() => setIsPlaying(true))
+        .catch(err => console.log("User interaction needed"));
+    };  
   const addPlayListMethod = (e) => {
     e.preventDefault();
     e.stopPropagation();
@@ -93,7 +100,8 @@ function App() {
           isPlaying,
           setIsPlaying,
           progressing, 
-          setProgressing
+          setProgressing,
+          handlePlay
         ]}
       />
     </>
